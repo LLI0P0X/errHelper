@@ -80,10 +80,13 @@ if __name__ == '__main__':
         q = 1 / 0
     except Exception as err:
         traceback.print_exception(err, file=sys.stdout)
-        print('\nОжидание ответа от ии...\n')
-        try:
-            helper = Helper()
-        except:
-            helper = Helper(config.DeepSeekAPIToken) # заменить config.DeepSeekAPIToken на "Ваш api токен"
-
-        helper.askDSC_AI(str(traceback.format_exc()))
+        tr = ['y', 'yes', 'д', 'да']
+        ans = input(f'\nСпростить об ошибке у DeepSeek code? ({tr})\n')
+        if ans in tr:
+            print('\nОжидание ответа от ии...\n')
+            try:
+                helper = Helper()
+            except:
+                helper = Helper(config.DeepSeekAPIToken)  # заменить config.DeepSeekAPIToken на "Ваш api токен"
+            helper.askDSC_AI(str(traceback.format_exc()))
+        print('\nУдачи)')
