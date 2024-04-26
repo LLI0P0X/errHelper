@@ -12,7 +12,7 @@ class Helper():
                  token: str | None = None,
                  fill: int = 120,
                  frequency_penalty: int = 0,
-                 max_tokens: int = 4096,
+                 max_tokens: int = 2048,
                  presence_penalty: int = 0,
                  stop: None = None,
                  stream: bool = False,
